@@ -5,12 +5,17 @@
     --blanco: #ffffff;
 }
 
-body { margin: 0; font-family: 'Segoe UI', Roboto, sans-serif; overflow-x: hidden; }
+body { 
+    margin: 0; 
+    font-family: 'Segoe UI', Roboto, sans-serif; 
+    overflow-x: hidden; 
+}
 
+/* --- BANNER PRINCIPAL --- */
 .hero-banner {
     width: 100%;
     min-height: 500px;
-    height: 80vh; /* Se adapta a la altura de la pantalla */
+    height: 80vh;
     background: linear-gradient(-45deg, var(--azul), var(--magenta), var(--amarillo), #222);
     background-size: 400% 400%;
     animation: gradientMove 12s ease infinite;
@@ -21,72 +26,80 @@ body { margin: 0; font-family: 'Segoe UI', Roboto, sans-serif; overflow-x: hidde
 
 .banner-content {
     display: flex;
-    flex-direction: row; /* Horizontal en PC */
     align-items: center;
     justify-content: space-around;
     width: 90%;
-    max-width: 1200px;
+    max-width: 1100px;
     gap: 40px;
 }
 
-/* Animación de la C */
+/* --- ESTILO DEL LOGO (TAMAÑO EQUILIBRADO) --- */
+.logo-3d-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
 .logo-c {
-    font-size: clamp(120px, 15vw, 200px); /* Tamaño fluido */
-    font-weight: 900;
-    color: white;
-    position: relative;
-    filter: drop-shadow(10px 20px 30px rgba(0,0,0,0.5));
+    width: 160px; /* Tamaño profesional corregido */
+    height: auto;
+    filter: drop-shadow(0px 15px 25px rgba(0,0,0,0.4));
     animation: float 4s ease-in-out infinite;
-    line-height: 1;
 }
 
 .logo-name {
     color: white;
     font-weight: bold;
-    letter-spacing: 2px;
-    text-align: center;
-    margin-top: -20px;
+    letter-spacing: 3px;
+    margin-top: 15px;
+    font-size: 1.2rem;
+    text-transform: uppercase;
 }
 
-/* Texto Principal */
-.main-text { text-align: left; }
+.logo-name span { font-weight: 300; }
+
+/* --- TEXTO Y BOTÓN --- */
+.main-text { color: white; }
+
 .main-text h1 {
-    color: white;
     font-size: clamp(40px, 5vw, 70px);
-    line-height: 0.9;
-    margin-bottom: 25px;
+    line-height: 0.85;
+    margin-bottom: 30px;
+    font-weight: 900;
 }
 
 .cta-button {
-    padding: 15px 35px;
+    padding: 16px 40px;
     font-size: 1.1rem;
     font-weight: bold;
     border-radius: 50px;
     border: none;
     cursor: pointer;
     background: var(--blanco);
-    transition: 0.3s;
+    color: var(--azul);
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
-/* --- RESPONSIVE: AJUSTES PARA CELULARES --- */
+.cta-button:hover {
+    transform: translateY(-3px);
+    background: var(--amarillo);
+    color: #000;
+}
+
+/* --- DISEÑO PARA MÓVILES --- */
 @media (max-width: 768px) {
-    .banner-content {
-        flex-direction: column; /* Se apila verticalmente */
-        text-align: center;
-        padding: 40px 0;
+    .banner-content { 
+        flex-direction: column; 
+        text-align: center; 
+        padding: 50px 0;
     }
-
-    .main-text {
-        text-align: center;
-    }
-
-    .hero-banner {
-        height: auto;
-        min-height: 100vh;
-    }
+    .logo-c { width: 130px; }
+    .main-text h1 { font-size: 3rem; }
 }
 
-/* Animaciones */
+/* --- ANIMACIONES --- */
 @keyframes gradientMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -94,6 +107,6 @@ body { margin: 0; font-family: 'Segoe UI', Roboto, sans-serif; overflow-x: hidde
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0) rotate(-2deg); }
-    50% { transform: translateY(-20px) rotate(2deg); }
+    0%, 100% { transform: translateY(0) rotate(-1deg); }
+    50% { transform: translateY(-15px) rotate(1deg); }
 }
