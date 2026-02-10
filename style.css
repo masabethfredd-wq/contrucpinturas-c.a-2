@@ -1,4 +1,72 @@
 :root {
+    /* --- ENCABEZADO (HEADER) --- */
+.main-header {
+    background: rgba(0, 21, 41, 0.95); /* Azul oscuro semi-transparente */
+    backdrop-filter: blur(10px); /* Efecto de vidrio esmerilado */
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.nav-logo {
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.nav-logo span { color: var(--amarillo); }
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-menu a:hover { color: var(--amarillo); }
+
+.btn-nav {
+    background: var(--magenta);
+    padding: 8px 20px;
+    border-radius: 5px;
+    color: white !important;
+}
+
+.btn-nav:hover {
+    background: var(--amarillo);
+    color: #000 !important;
+}
+
+/* Ajuste para que el banner no quede tapado por el header */
+.hero-banner {
+    padding-top: 80px; 
+}
+
+/* Ocultar menú en móviles para evitar desorden (luego podemos hacer un menú hamburguesa) */
+@media (max-width: 768px) {
+    .nav-menu { display: none; }
+}
     --magenta: #E20074;
     --amarillo: #FFCC00;
     --azul: #0055A4;
@@ -110,4 +178,5 @@ body {
     0%, 100% { transform: translateY(0) rotate(-1deg); }
     50% { transform: translateY(-15px) rotate(1deg); }
 }
+
 
