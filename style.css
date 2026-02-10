@@ -1,0 +1,99 @@
+:root {
+    --magenta: #E20074;
+    --amarillo: #FFCC00;
+    --azul: #0055A4;
+    --blanco: #ffffff;
+}
+
+body { margin: 0; font-family: 'Segoe UI', Roboto, sans-serif; overflow-x: hidden; }
+
+.hero-banner {
+    width: 100%;
+    min-height: 500px;
+    height: 80vh; /* Se adapta a la altura de la pantalla */
+    background: linear-gradient(-45deg, var(--azul), var(--magenta), var(--amarillo), #222);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-content {
+    display: flex;
+    flex-direction: row; /* Horizontal en PC */
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+    max-width: 1200px;
+    gap: 40px;
+}
+
+/* Animación de la C */
+.logo-c {
+    font-size: clamp(120px, 15vw, 200px); /* Tamaño fluido */
+    font-weight: 900;
+    color: white;
+    position: relative;
+    filter: drop-shadow(10px 20px 30px rgba(0,0,0,0.5));
+    animation: float 4s ease-in-out infinite;
+    line-height: 1;
+}
+
+.logo-name {
+    color: white;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-top: -20px;
+}
+
+/* Texto Principal */
+.main-text { text-align: left; }
+.main-text h1 {
+    color: white;
+    font-size: clamp(40px, 5vw, 70px);
+    line-height: 0.9;
+    margin-bottom: 25px;
+}
+
+.cta-button {
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+    background: var(--blanco);
+    transition: 0.3s;
+}
+
+/* --- RESPONSIVE: AJUSTES PARA CELULARES --- */
+@media (max-width: 768px) {
+    .banner-content {
+        flex-direction: column; /* Se apila verticalmente */
+        text-align: center;
+        padding: 40px 0;
+    }
+
+    .main-text {
+        text-align: center;
+    }
+
+    .hero-banner {
+        height: auto;
+        min-height: 100vh;
+    }
+}
+
+/* Animaciones */
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-20px) rotate(2deg); }
+}
