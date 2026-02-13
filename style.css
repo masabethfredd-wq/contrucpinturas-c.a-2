@@ -1,8 +1,21 @@
 :root {
-    /* --- ENCABEZADO (HEADER) --- */
+    --magenta: #E20074;
+    --amarillo: #FFCC00;
+    --azul: #0055A4;
+    --blanco: #ffffff;
+}
+
+/* RESET */
+body { 
+    margin: 0; 
+    font-family: 'Segoe UI', Roboto, sans-serif; 
+    overflow-x: hidden; 
+}
+
+/* ---------- HEADER ---------- */
 .main-header {
-    background: rgba(0, 21, 41, 0.95); /* Azul oscuro semi-transparente */
-    backdrop-filter: blur(10px); /* Efecto de vidrio esmerilado */
+    background: rgba(0, 21, 41, 0.95);
+    backdrop-filter: blur(10px);
     padding: 15px 0;
     position: fixed;
     width: 100%;
@@ -13,7 +26,7 @@
 
 .nav-container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -24,7 +37,6 @@
     color: white;
     font-weight: bold;
     font-size: 1.2rem;
-    letter-spacing: 1px;
 }
 
 .nav-logo span { color: var(--amarillo); }
@@ -32,7 +44,6 @@
 .nav-menu {
     list-style: none;
     display: flex;
-    align-items: center;
     gap: 30px;
 }
 
@@ -40,8 +51,6 @@
     text-decoration: none;
     color: white;
     font-size: 0.9rem;
-    font-weight: 500;
-    transition: 0.3s;
 }
 
 .nav-menu a:hover { color: var(--amarillo); }
@@ -58,28 +67,12 @@
     color: #000 !important;
 }
 
-/* Ajuste para que el banner no quede tapado por el header */
+/* Evitar que banner quede tapado */
 .hero-banner {
-    padding-top: 80px; 
+    padding-top: 80px;
 }
 
-/* Ocultar menú en móviles para evitar desorden (luego podemos hacer un menú hamburguesa) */
-@media (max-width: 768px) {
-    .nav-menu { display: none; }
-}
-    --magenta: #E20074;
-    --amarillo: #FFCC00;
-    --azul: #0055A4;
-    --blanco: #ffffff;
-}
-
-body { 
-    margin: 0; 
-    font-family: 'Segoe UI', Roboto, sans-serif; 
-    overflow-x: hidden; 
-}
-
-/* --- BANNER PRINCIPAL --- */
+/* ---------- BANNER ---------- */
 .hero-banner {
     width: 100%;
     min-height: 500px;
@@ -101,17 +94,15 @@ body {
     gap: 40px;
 }
 
-/* --- ESTILO DEL LOGO (TAMAÑO EQUILIBRADO) --- */
+/* ---------- LOGO ---------- */
 .logo-3d-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
 }
 
 .logo-c {
-    width: 180px; /* Tamaño profesional corregido */
-    height: auto;
+    width: 180px;
     filter: drop-shadow(0px 15px 25px rgba(0,0,0,0.4));
     animation: float 4s ease-in-out infinite;
 }
@@ -125,49 +116,110 @@ body {
     text-transform: uppercase;
 }
 
-.logo-name span { font-weight: 300; }
-
-/* --- TEXTO Y BOTÓN --- */
+/* ---------- TEXTO ---------- */
 .main-text { color: white; }
 
 .main-text h1 {
     font-size: clamp(40px, 5vw, 70px);
     line-height: 0.85;
     margin-bottom: 30px;
-    font-weight: 900;
 }
 
 .cta-button {
     padding: 16px 40px;
-    font-size: 1.1rem;
-    font-weight: bold;
     border-radius: 50px;
     border: none;
     cursor: pointer;
-    background: var(--blanco);
+    background: white;
     color: var(--azul);
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
     background: var(--amarillo);
-    color: #000;
 }
 
-/* --- DISEÑO PARA MÓVILES --- */
+/* ---------- PRODUCTOS ---------- */
+.products-section{
+    padding:60px 20px;
+    text-align:center;
+    background:#f5f6f8;
+}
+
+.products-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.product-card{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 4px 12px rgba(0,0,0,0.15);
+}
+
+.product-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+/* ---------- CATÁLOGO ---------- */
+.catalog-panel{
+    background:#111827;
+    color:white;
+    padding:60px 20px;
+    text-align:center;
+}
+
+.catalog-panel button{
+    margin-top:15px;
+    padding:14px 28px;
+    border:none;
+    border-radius:40px;
+    background:var(--amarillo);
+}
+
+/* ---------- CONTACTO ---------- */
+.contact-section{
+    padding:60px 20px;
+    text-align:center;
+    background:#e5e7eb;
+}
+
+/* ---------- FOOTER ---------- */
+footer{
+    background:#111827;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* ---------- WHATSAPP ---------- */
+.whatsapp-btn{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    color:white;
+    font-size:26px;
+    padding:15px 18px;
+    border-radius:50%;
+}
+
+/* ---------- RESPONSIVE ---------- */
 @media (max-width: 768px) {
-    .banner-content { 
-        flex-direction: column; 
-        text-align: center; 
-        padding: 50px 0;
+    .banner-content {
+        flex-direction: column;
+        text-align:center;
     }
-    .logo-c { width: 130px; }
-    .main-text h1 { font-size: 3rem; }
+
+    .nav-menu { display:none; }
 }
 
-/* --- ANIMACIONES --- */
+/* ---------- ANIMACIONES ---------- */
 @keyframes gradientMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -175,100 +227,6 @@ body {
 }
 
 @keyframes float {
-    0%, 100% { transform: translateY(0) rotate(-1deg); }
-    50% { transform: translateY(-15px) rotate(1deg); }
-/* ---- PRODUCTOS ---- */
-.products-section{
-padding:60px 20px;
-text-align:center;
-background:#f5f6f8;
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
 }
-
-.products-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-max-width:1100px;
-margin:auto;
-}
-
-.product-card{
-background:white;
-border-radius:12px;
-overflow:hidden;
-box-shadow:0 4px 12px rgba(0,0,0,0.15);
-transition:0.3s;
-}
-
-.product-card:hover{
-transform:translateY(-6px);
-}
-
-.product-card img{
-width:100%;
-height:200px;
-object-fit:cover;
-}
-
-.product-card h3{
-margin:10px 0 5px;
-}
-
-.product-card p{
-padding:0 15px 15px;
-}
-
-/* ---- PANEL CATÁLOGO ---- */
-.catalog-panel{
-background:#111827;
-color:white;
-padding:60px 20px;
-text-align:center;
-}
-
-.catalog-panel button{
-margin-top:15px;
-padding:14px 28px;
-border:none;
-border-radius:40px;
-font-weight:bold;
-cursor:pointer;
-background:var(--amarillo);
-}
-
-/* ---- CONTACTO ---- */
-.contact-section{
-padding:60px 20px;
-text-align:center;
-background:#e5e7eb;
-}
-
-/* ---- FOOTER ---- */
-footer{
-background:#111827;
-color:white;
-text-align:center;
-padding:20px;
-}
-
-/* ---- BOTÓN WHATSAPP ---- */
-.whatsapp-btn{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-font-size:26px;
-padding:15px 18px;
-border-radius:50%;
-text-decoration:none;
-box-shadow:0 4px 10px rgba(0,0,0,0.3);
-z-index:999;
-}
-
-}
-
-
-
-
-
